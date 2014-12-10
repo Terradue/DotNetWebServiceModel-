@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>Terradue.WebService.Model</id>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <title>Terradue.WebService.Model</title>
     <authors>Terradue</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -11,7 +11,7 @@
     <dependencies>
       <dependency id="ServiceStack" version="3.9.71" />
       <dependency id="ServiceStack.Common" version="3.9.71" />
-      <dependency id="Terradue.Portal" version="[2.5.5,2.6)" />
+      <dependency id="Terradue.Portal" version="[2.6.0,2.7)" />
     </dependencies>
   </metadata>
   <files>

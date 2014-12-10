@@ -1,9 +1,5 @@
 packages
-<<<<<<< HEAD
 Terradue.WebService.Model.userprefs
 Terradue.WebService.Model/bin
 Terradue.WebService.Model/obj
-=======
-Terradue.WebService.Model/bin
->>>>>>> ignore
 Terradue.WebService.Model/core
