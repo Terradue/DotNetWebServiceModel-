@@ -21,6 +21,9 @@ namespace Terradue.WebService.Model {
     [Route("/wps", "POST", Summary = "POST a WPS provider", Notes = "")]
     public class CreateWPSProvider : WebWpsProvider, IReturn<WebWpsProvider>{}
 
+    [Route("/wps", "PUT", Summary = "PUT a WPS provider", Notes = "")]
+    public class UpdateWPSProvider : WebWpsProvider, IReturn<WebWpsProvider>{}
+
     [Route("/wps/WebProcessingService", "GET", Summary = "Web Processing Services", Notes = "")]
     public class GetWebProcessingServices : IReturn<HttpResult>{
         [ApiMember(Name="service", Description = "service type", ParameterType = "query", DataType = "String", IsRequired = true)]
