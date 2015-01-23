@@ -4,37 +4,37 @@ using System.Collections.Generic;
 using Terradue.Portal;
 
 namespace Terradue.WebService.Model {
-    [Route("/datapackage/{Id}", "GET", Summary = "GET a datapackage", Notes = "")]
+    [Route("/data/package/{Id}", "GET", Summary = "GET a datapackage", Notes = "")]
     public class GetDataPackage : IReturn<WebDataPackage>
     {
         [ApiMember(Name="Id", Description = "Data Package id", ParameterType = "query", DataType = "int", IsRequired = true)]
         public int Id { get; set; }
     }
 
-    [Route("/datapackage", "GET", Summary = "GET all datapackages", Notes = "")]
+    [Route("/data/package", "GET", Summary = "GET all datapackages", Notes = "")]
     public class GetAllDataPackages : IReturn<List<WebDataPackage>> {}
 
-    [Route("/datapackage", "POST", Summary = "POST a datapackage", Notes = "Add a new datapackage in database")]
+    [Route("/data/package", "POST", Summary = "POST a datapackage", Notes = "Add a new datapackage in database")]
     public class CreateDataPackage : WebDataPackage, IReturn<WebDataPackage>{}
 
-    [Route("/datapackage", "PUT", Summary = "PUT a datapackage", Notes = "Update a datapackage in database")]
+    [Route("/data/package", "PUT", Summary = "PUT a datapackage", Notes = "Update a datapackage in database")]
     public class UpdateDataPackage : WebDataPackage, IReturn<WebDataPackage>{}
 
-    [Route("/datapackage/{Id}", "DELETE", Summary = "DELETE a datapackage", Notes = "Delete a datapackage from database")]
+    [Route("/data/package/{Id}", "DELETE", Summary = "DELETE a datapackage", Notes = "Delete a datapackage from database")]
     public class DeleteDataPackage : IReturn<WebResponseBool>
     {
         [ApiMember(Name="Id", Description = "datapackage id", ParameterType = "query", DataType = "int", IsRequired = true)]
         public int Id { get; set; }
     }
         
-    [Route("/datapackage/{DpId}/item", "POST", Summary = "POST item to datapackage", Notes = "datapackage item is contained in the body")]
+    [Route("/data/package/{DpId}/item", "POST", Summary = "POST item to datapackage", Notes = "datapackage item is contained in the body")]
     public class AddItemToDataPackage : WebDataPackageItem, IReturn<WebDataPackage>
     {
         [ApiMember(Name="DpId", Description = "Data Package Id", ParameterType = "query", DataType = "int", IsRequired = true)]
         public int DpId { get; set; }
     }
 
-    [Route("/datapackage/{DpId}/item/{Id}", "DELETE", Summary = "DELETE item from datapackage", Notes = "")]
+    [Route("/data/package/{DpId}/item/{Id}", "DELETE", Summary = "DELETE item from datapackage", Notes = "")]
     public class RemoveItemFromDataPackage : IReturn<WebDataPackage>
     {
         [ApiMember(Name="DpId", Description = "Data Package Id", ParameterType = "query", DataType = "int", IsRequired = true)]

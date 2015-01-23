@@ -4,23 +4,23 @@ using System.Collections.Generic;
 using Terradue.Portal;
 
 namespace Terradue.WebService.Model {
-    [Route("/series", "GET", Summary = "GET a list of series", Notes = "Get all existing Series")]
+    [Route("/data/collection", "GET", Summary = "GET a list of series", Notes = "Get all existing Series")]
     public class GetAllSeries : IReturn<List<WebSeries>>{}
 
-    [Route("/series/{Id}", "GET", Summary = "GET a list of series", Notes = "Series can be filtered by User Id, Status, ...")]
+    [Route("/data/collection/{Id}", "GET", Summary = "GET a list of series", Notes = "Series can be filtered by User Id, Status, ...")]
     public class GetSerie : IReturn<WebSeries>
     {
         [ApiMember(Name="Id", Description = "Series id", ParameterType = "query", DataType = "int", IsRequired = true)]
         public int Id { get; set; }
     }
 
-    [Route("/series", "POST", Summary = "POST a series", Notes = "Series can be filtered by User Id, Status, ...")]
+    [Route("/data/collection", "POST", Summary = "POST a series", Notes = "Series can be filtered by User Id, Status, ...")]
     public class CreateSerie : WebSeries, IReturn<WebSeries>{}
 
-    [Route("/series", "PUT", Summary = "PUT a series", Notes = "Series can be filtered by User Id, Status, ...")]
+    [Route("/data/collection", "PUT", Summary = "PUT a series", Notes = "Series can be filtered by User Id, Status, ...")]
     public class UpdateSerie : WebSeries, IReturn<WebSeries>{}
 
-    [Route("/series/{Id}", "DELETE", Summary = "DELETE a serie", Notes = "Delete a serie from database")]
+    [Route("/data/collection/{Id}", "DELETE", Summary = "DELETE a serie", Notes = "Delete a serie from database")]
     public class DeleteSerie : IReturn<List<WebSeries>>
     {
         [ApiMember(Name="Id", Description = "Series id", ParameterType = "query", DataType = "int", IsRequired = true)]
