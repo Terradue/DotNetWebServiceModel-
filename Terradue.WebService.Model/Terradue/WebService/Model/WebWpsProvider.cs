@@ -6,25 +6,25 @@ using ServiceStack.Common.Web;
 
 namespace Terradue.WebService.Model {
 
-    [Route("/wps", "GET", Summary = "GET a list of WPS providers", Notes = "")]
+    [Route("/cr/wps", "GET", Summary = "GET a list of WPS providers", Notes = "")]
     public class GetWPSProviders : IReturn<List<WebWpsProvider>>{}
 
-    [Route("/wps/search", "GET", Summary = "GET a list of WPS providers", Notes = "")]
+    [Route("/cr/wps/search", "GET", Summary = "GET a list of WPS providers", Notes = "")]
     public class SearchWPSProviders : IReturn<HttpResult>{}
 
-    [Route("/wps/{Identifier}/description", "GET", Summary = "GET a list of WPS providers", Notes = "")]
+    [Route("/cr/wps/{Identifier}/description", "GET", Summary = "GET a list of WPS providers", Notes = "")]
     public class GetWPSProvidersDescription : IReturn<HttpResult>{
         [ApiMember(Name="Identifier", Description = "Identifier", ParameterType = "query", DataType = "string", IsRequired = true)]
         public string Identifier { get; set; }
     }
 
-    [Route("/wps", "POST", Summary = "POST a WPS provider", Notes = "")]
+    [Route("/cr/wps", "POST", Summary = "POST a WPS provider", Notes = "")]
     public class CreateWPSProvider : WebWpsProvider, IReturn<WebWpsProvider>{}
 
-    [Route("/wps", "PUT", Summary = "PUT a WPS provider", Notes = "")]
+    [Route("/cr/wps", "PUT", Summary = "PUT a WPS provider", Notes = "")]
     public class UpdateWPSProvider : WebWpsProvider, IReturn<WebWpsProvider>{}
 
-    [Route("/wps/WebProcessingService", "GET", Summary = "Web Processing Services", Notes = "")]
+    [Route("/cr/wps/WebProcessingService", "GET", Summary = "Web Processing Services", Notes = "")]
     public class GetWebProcessingServices : IReturn<HttpResult>{
         [ApiMember(Name="service", Description = "service type", ParameterType = "query", DataType = "String", IsRequired = true)]
         public String Service { get; set; }
@@ -40,13 +40,13 @@ namespace Terradue.WebService.Model {
         public String ResponseDocument { get; set; }
     }
 
-    [Route("/wps/RetrieveResultServlet", "GET", Summary = "Retrieve results servlets", Notes = "")]
+    [Route("/cr/wps/RetrieveResultServlet", "GET", Summary = "Retrieve results servlets", Notes = "")]
     public class GetResultsServlets : IReturn<HttpResult>{
         [ApiMember(Name="id", Description = "servlet id", ParameterType = "query", DataType = "String", IsRequired = true)]
         public String Id { get; set; }
     }
 
-    [Route("/wps/{Id}", "DELETE", Summary = "POST a WPS provider", Notes = "")]
+    [Route("/cr/wps/{Id}", "DELETE", Summary = "POST a WPS provider", Notes = "")]
     public class DeleteWPSProvider : IReturn<bool>{
         [ApiMember(Name="Id", Description = "Provider id", ParameterType = "query", DataType = "int", IsRequired = true)]
         public int Id { get; set; }
