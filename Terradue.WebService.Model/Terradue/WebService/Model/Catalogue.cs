@@ -24,7 +24,13 @@ namespace Terradue.WebService.Model
 	[Route("/catalogue/search", "GET", Summary = "GET a list of series search", Notes = "")]
 	public class GetOpensearchSearchs{}
 
-    [Route("/datapackage/{DataPackageId}/search", "GET", Summary = "search into the items of a datapackage", Notes = "Data Package is selected from its ID")]
+    [Route("/data/package/search", "GET", Summary = "search for datapackage", Notes = "Return all data packages accessible by the user")]
+    public class DataPackagesSearchRequest {}
+
+    [Route("/data/package/description", "GET", Summary = "opensearch description for datapackage", Notes = "Return all data packages accessible by the user")]
+    public class DataPackagesDescriptionRequest {}
+
+    [Route("/data/package/{DataPackageId}/search", "GET", Summary = "search into the items of a datapackage", Notes = "Data Package is selected from its ID")]
     public class DataPackageSearchRequest {
 
         [ApiMember(Description = "DataPackage ID", ParameterType = "query", DataType = "string", IsRequired = true)]
@@ -35,7 +41,7 @@ namespace Terradue.WebService.Model
 
     }
 
-    [Route("/datapackage/{DataPackageId}/description", "GET", Summary = "Opensearch Description of a data package", Notes = "Data package is selected from its ID")]
+    [Route("/data/package/{DataPackageId}/description", "GET", Summary = "Opensearch Description of a data package", Notes = "Data package is selected from its ID")]
     public class DataPackageDescriptionRequest : IReturn<HttpResult> {
 
         [ApiMember(Description = "DataPackage ID", ParameterType = "query", DataType = "string", IsRequired = true)]
