@@ -18,10 +18,19 @@ namespace Terradue.WebService.Model {
     [Route("/service/wps", "GET", Summary = "GET a list of WPS services", Notes = "")]
     public class GetWPSServices : IReturn<List<WebWpsService>>{}
 
+    [Route("/service/wps/{Id}", "GET", Summary = "GET a WPS service", Notes = "")]
+    public class GetWPSService : IReturn<WebWpsService>{
+        [ApiMember(Name="Id", Description = "Service id", ParameterType = "query", DataType = "int", IsRequired = true)]
+        public int Id { get; set; }
+    }
+
     [Route("/service/wps", "POST", Summary = "POST a WPS service", Notes = "")]
     public class CreateWPSService : WebWpsService, IReturn<WebWpsService>{}
 
-    [Route("/service/wps/{Id}", "DELETE", Summary = "POST a WPS service", Notes = "")]
+    [Route("/service/wps", "PUT", Summary = "PUT a WPS service", Notes = "")]
+    public class UpdateWPSService : WebWpsService, IReturn<WebWpsService>{}
+
+    [Route("/service/wps/{Id}", "DELETE", Summary = "Delete a WPS service", Notes = "")]
     public class DeleteWPSService : IReturn<bool>{
         [ApiMember(Name="Id", Description = "Service id", ParameterType = "query", DataType = "int", IsRequired = true)]
         public int Id { get; set; }
@@ -34,6 +43,8 @@ namespace Terradue.WebService.Model {
         public String Url { get; set; }
         [ApiMember(Name="Version", Description = "Service url", ParameterType = "query", DataType = "String", IsRequired = true)]
         public String Version { get; set; }
+        [ApiMember(Name="Available", Description = "Is service available", ParameterType = "query", DataType = "bool", IsRequired = true)]
+        public bool Available { get; set; }
 
         public WebService() {}
 
@@ -45,6 +56,7 @@ namespace Terradue.WebService.Model {
             this.Description = entity.Description;
             this.Url = entity.Url;
             this.Version = entity.Version;
+            this.Available = entity.Available;
         }
 
         /// <summary>
@@ -60,6 +72,7 @@ namespace Terradue.WebService.Model {
             entity.Description = this.Description;
             entity.Url = this.Url;
             entity.Version = this.Version;
+            entity.Available = this.Available;
 
             return entity;
         }
