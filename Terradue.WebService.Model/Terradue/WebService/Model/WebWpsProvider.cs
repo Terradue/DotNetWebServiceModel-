@@ -40,7 +40,7 @@ namespace Terradue.WebService.Model {
         public String ResponseDocument { get; set; }
     }
 
-    [Route("/cr/wps/RetrieveResultServlet", "GET", Summary = "Retrieve results servlets", Notes = "")]
+    [Route("/wps/RetrieveResultServlet", "GET", Summary = "Retrieve results servlets", Notes = "")]
     public class GetResultsServlets : IReturn<HttpResult>{
         [ApiMember(Name="id", Description = "servlet id", ParameterType = "query", DataType = "String", IsRequired = true)]
         public String Id { get; set; }
