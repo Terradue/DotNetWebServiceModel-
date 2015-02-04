@@ -36,6 +36,16 @@ namespace Terradue.WebService.Model {
         public int Id { get; set; }
     }
 
+    [Route("/user/emailconfirm", "POST", Summary = "Ask for confirmation email", Notes = "User is found with auth")]
+    public class SendUserEmailConfirmationEmail : IReturn<WebUser> {
+    }
+
+    [Route("/user/emailconfirm", "GET", Summary = "Confirm email", Notes = "User is found with auth")]
+    public class ConfirmUserEmail : IReturn<WebUser> {
+        [ApiMember(Name = "token", Description = "confirmation key", ParameterType = "query", DataType = "string", IsRequired = true)]
+        public string Token { get; set; }
+    }
+
     //-------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------
