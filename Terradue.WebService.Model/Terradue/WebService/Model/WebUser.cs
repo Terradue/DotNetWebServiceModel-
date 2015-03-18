@@ -79,6 +79,9 @@ namespace Terradue.WebService.Model {
         [ApiMember(Name = "Level", Description = "User level", ParameterType = "query", DataType = "int", IsRequired = false)]
         public int Level { get; set; }
 
+        [ApiMember(Name = "AccountStatus", Description = "User Account Status", ParameterType = "query", DataType = "int", IsRequired = false)]
+        public int AccountStatus { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Terradue.Metadata.Model.User"/> class.
         /// </summary>
@@ -96,6 +99,7 @@ namespace Terradue.WebService.Model {
             this.Affiliation = entity.Affiliation;
             this.Country = entity.Country;
             this.Level = entity.Level;
+            this.AccountStatus = entity.AccountStatus;
         }
 
         /// <summary>
@@ -115,6 +119,7 @@ namespace Terradue.WebService.Model {
             user.Affiliation = this.Affiliation;
             user.Country = this.Country;
             user.Level = this.Level;
+            user.AccountStatus = this.AccountStatus;
 
             return user;
         }
