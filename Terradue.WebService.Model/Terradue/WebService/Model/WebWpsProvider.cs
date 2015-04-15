@@ -22,7 +22,10 @@ namespace Terradue.WebService.Model {
     public class CreateWPSProvider : WebWpsProvider, IReturn<WebWpsProvider>{}
 
     [Route("/cr/wps", "PUT", Summary = "PUT a WPS provider", Notes = "")]
-    public class UpdateWPSProvider : WebWpsProvider, IReturn<WebWpsProvider>{}
+    public class UpdateWPSProvider : WebWpsProvider, IReturn<WebWpsProvider>{
+        [ApiMember(Name="mode", Description = "service update mode", ParameterType = "query", DataType = "String", IsRequired = false)]
+        public String Mode { get; set; }
+    }
 
     [Route("/wps/WebProcessingService", "GET", Summary = "Web Processing Services", Notes = "")]
     public class GetWebProcessingServices : IReturn<HttpResult>{

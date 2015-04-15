@@ -68,7 +68,10 @@ namespace Terradue.WebService.Model {
             RemoteResourceSet result = (input == null ? new RemoteResourceSet(context) : input);
 
             result.Name = this.Name;
-            result.Identifier = this.Identifier;
+            if(this.Identifier == null && this.Name != null) 
+                result.Identifier = this.Name.Replace(" ","");
+            else 
+                result.Identifier = this.Identifier;
             result.IsDefault = this.IsDefault;
 
             return result;
