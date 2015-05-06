@@ -96,7 +96,6 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Terradue.WebService.Model.csproj" />
-    <None Include="app.config" />
     <None Include="core\db\db-2.4#.sql" />
     <None Include="core\db\db-2.4c.sql" />
     <None Include="core\db\db-2.5#.sql" />
