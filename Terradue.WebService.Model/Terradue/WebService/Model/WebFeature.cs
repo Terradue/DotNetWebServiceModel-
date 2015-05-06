@@ -55,6 +55,10 @@ namespace Terradue.WebService.Model {
         [ApiMember(Name = "ButtonLink", Description = "Feature button link", ParameterType = "query", DataType = "String", IsRequired = false)]
         public string ButtonLink { get; set; }
 
+        [ApiMember(Name = "Position", Description = "Feature position", ParameterType = "query", DataType = "int", IsRequired = false)]
+        public int Position { get; set; }
+
+
         public WebFeature() {}
         public WebFeature(Terradue.Portal.Feature entity) : base(entity) {
             this.Title = entity.Title;
@@ -63,6 +67,7 @@ namespace Terradue.WebService.Model {
             this.ImageStyle = entity.ImageStyle;
             this.ButtonLink = entity.ButtonLink;
             this.ButtonText = entity.ButtonText;
+            this.Position = entity.Position;
         }
         public Terradue.Portal.Feature ToEntity(IfyContext context, Terradue.Portal.Feature input){
             Terradue.Portal.Feature feat = (input == null ? new Terradue.Portal.Feature(context) : input);
@@ -73,6 +78,7 @@ namespace Terradue.WebService.Model {
             feat.ButtonText = this.ButtonText;
             feat.Image = this.Image;
             feat.ImageStyle = this.ImageStyle;
+            feat.Position = this.Position;
 
             return feat;
         }
