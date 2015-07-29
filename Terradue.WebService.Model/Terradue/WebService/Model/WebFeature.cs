@@ -20,6 +20,9 @@ namespace Terradue.WebService.Model {
     [Route("/feature", "PUT", Summary = "PUT a feature", Notes = "")]
     public class UpdateFeature : WebFeature, IReturn<WebFeature>{}
 
+    [Route("/feature/sort", "PUT", Summary = "PUT a list of features", Notes = "")]
+    public class SortFeature : List<WebFeature>, IReturn<WebFeature>{}
+
     [Route("/feature/{id}", "DELETE", Summary = "DELETE a feature", Notes = "")]
     public class DeleteFeature : IReturn<WebResponseBool>{
         [ApiMember(Name = "id", Description = "Feature id", ParameterType = "query", DataType = "int", IsRequired = true)]
