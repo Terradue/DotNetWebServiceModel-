@@ -2,7 +2,7 @@
 using ServiceStack.ServiceHost;
 using System.Collections.Generic;
 
-/*
+/*!
 
 \defgroup Model Model
 @{
