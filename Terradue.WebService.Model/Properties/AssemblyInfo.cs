@@ -1,6 +1,25 @@
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
+/*!
+
+\namespace Terradue.WebService.Model
+@{
+    Terradue.WebService.Model Software Package
+
+    \xrefitem sw_version "Versions" "Software Package Version" 1.1.3
+
+    \xrefitem sw_link "Links" "Software Package List" [Terradue.WebService.Model](https://git.terradue.com/sugar/terradue-webservice-model)
+
+    \xrefitem sw_license "License" "Software License" [incubating](https://git.terradue.com/sugar/terradue-webservice-model)
+
+    \xrefitem sw_req "Require" "Software Dependencies" \ref Terradue.Portal
+
+    \ingroup Model
+@}
+
+*/
+
 // Information about this assembly is defined by the following attributes.
 // Change them to the values specific to your project.
 [assembly: AssemblyTitle ("Terradue.WebService.Model")]
