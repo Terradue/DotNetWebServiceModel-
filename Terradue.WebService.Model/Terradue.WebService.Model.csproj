@@ -92,6 +92,7 @@
   <ItemGroup>
     <Folder Include="Terradue\" />
     <Folder Include="Terradue\WebService\" />
+    <Folder Include="Terradue\WebService\Model\Ows\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
