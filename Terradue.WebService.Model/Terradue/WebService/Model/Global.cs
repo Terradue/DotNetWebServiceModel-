@@ -4,11 +4,32 @@ using System.Collections.Generic;
 
 /*!
 
-\defgroup Model Model
+\defgroup WebServices Web Services
 @{
 
 @}
 
+
+\defgroup REST REST handler
+@{
+
+\ingroup WebServices
+
+\xrefitem dep "Dependencies" "Dependencies" CRUD \ref TepAccounting
+
+\xrefitem dep "Dependencies" "Dependencies" CRUD \ref TepApplication
+
+\xrefitem dep "Dependencies" "Dependencies" CRUD \ref TepCommunity
+
+\xrefitem dep "Dependencies" "Dependencies" CRUD \ref TepContents
+
+\xrefitem dep "Dependencies" "Dependencies" CRUD \ref TepData
+
+\xrefitem dep "Dependencies" "Dependencies" CRUD \ref TepService
+
+\xrefitem int "Interfaces" "Interfaces" implements \ref T2API interface
+
+@}
 
 \defgroup T2API T2 API
 @{
