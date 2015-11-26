@@ -27,6 +27,9 @@ using System.Collections.Generic;
 
 \xrefitem dep "Dependencies" "Dependencies" CRUD \ref TepService
 
+\xrefitem dep "Dependencies" "Dependencies" uses \ref Context to setup the HTTP session
+
+
 \xrefitem int "Interfaces" "Interfaces" implements \ref T2API interface
 
 @}
@@ -51,6 +54,7 @@ using System.Collections.Generic;
     It also offers for most of the items an OpenSearch interface to discover or search them efficiently.
 
     \xrefitem cptype_int "Interfaces" "Interfaces"
+    
 
 @}
 
