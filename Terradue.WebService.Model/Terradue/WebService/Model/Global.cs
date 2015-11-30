@@ -51,10 +51,14 @@ using System.Collections.Generic;
     - User
     - Wps Provider
 
-    It also offers for most of the items an OpenSearch interface to discover or search them efficiently.
+    It also offers for most of the items an \ref OpenSearch interface to discover or search them efficiently. The results are provided in the \ref OWSContext model
+    and in the feed format requested.
 
     \xrefitem cptype_int "Interfaces" "Interfaces"
-    
+
+    \xrefitem norm "Normative References" "Normative References" [OpenSearch 1.1](http://www.opensearch.org/Specifications/OpenSearch/1.1)
+
+    \xrefitem norm "Normative References" "Normative References" [OGC OWS Context Conceptual Model](https://portal.opengeospatial.org/files/?artifact_id=55182)
 
 @}
 
