@@ -13,24 +13,27 @@ using System.Collections.Generic;
 \defgroup REST REST handler
 @{
 
+This component enables the full web service stack to intercat with the back-end.
+It allows to control many of the business objects in the system with REST CRUD (Create, Read, Update, Delete) operations
+
 \ingroup WebServices
 
-\xrefitem dep "Dependencies" "Dependencies" CRUD \ref TepAccounting
+\xrefitem dep "Dependencies" "Dependencies" CRUD operations for user accounts managed \ref TepAccounting
 
-\xrefitem dep "Dependencies" "Dependencies" CRUD \ref TepApplication
+\xrefitem dep "Dependencies" "Dependencies" CRUD operations for thematic application managed by \ref TepApplication
 
-\xrefitem dep "Dependencies" "Dependencies" CRUD \ref TepCommunity
+\xrefitem dep "Dependencies" "Dependencies" CRUD operations for user and groups managed by \ref TepCommunity
 
-\xrefitem dep "Dependencies" "Dependencies" CRUD \ref TepContents
+\xrefitem dep "Dependencies" "Dependencies" CRUD operations for editorial contents managed by \ref TepContents
 
-\xrefitem dep "Dependencies" "Dependencies" CRUD \ref TepData
+\xrefitem dep "Dependencies" "Dependencies" CRUD operations for collections and data packages managed by \ref TepData
 
-\xrefitem dep "Dependencies" "Dependencies" CRUD \ref TepService
-
-\xrefitem dep "Dependencies" "Dependencies" uses \ref Context to setup the HTTP session
+\xrefitem dep "Dependencies" "Dependencies" CRUD operations for services managed by \ref TepService
 
 
 \xrefitem int "Interfaces" "Interfaces" implements \ref T2API interface
+
+\xrefitem int "Interfaces" "Interfaces" implements \ref OpenSearch interface
 
 @}
 
@@ -41,6 +44,7 @@ using System.Collections.Generic;
 
     It is a REST web service with usual CRUD (create, read, update, delete) functions for the objects managed by the portal:
 
+    - Collection
     - Data Package
     - Web Feature
     - Group
@@ -50,6 +54,8 @@ using System.Collections.Generic;
     - Service
     - User
     - Wps Provider
+    - Contest
+    - Benchmark
 
     It also offers for most of the items an \ref OpenSearch interface to discover or search them efficiently. The results are provided in the \ref OWSContext model
     and in the feed format requested.
