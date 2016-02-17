@@ -8,6 +8,10 @@ namespace Terradue.WebService.Model {
     [Route("/news/search", "GET", Summary = "GET a list of news", Notes = "")]
     public class SearchNews {}
 
+
+    [Route("/news/description", "GET", Summary = "GET a list of news", Notes = "")]
+    public class DescriptionNews {}
+
     [Route("/news", "GET", Summary = "GET a list of news", Notes = "")]
     public class GetAllNews : IReturn<List<WebNews>>{}
 
