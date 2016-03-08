@@ -1,0 +1,160 @@
+{
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            -180.0,
+                            90.0
+                        ],
+                        [
+                            180.0,
+                            90.0
+                        ],
+                        [
+                            180.0,
+                            -90.0
+                        ],
+                        [
+                            -180.0,
+                            -90.0
+                        ],
+                        [
+                            -180.0,
+                            90.0
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "id": "https://geohazards-tep.eo.esa.int/t2api/apps/search?uid=global&format=atom",
+            "properties": {
+                "authors": [
+                    {
+                        "email": "geohazards-tep@esa.int",
+                        "name": "GEP Content Authority",
+                        "uri": "https://geohazards-tep.eo.esa.int/t2api/users/geohazards-tep"
+                    }
+                ],
+                "box": "90 -180 -90 180",
+                "content": "\n      <div id=\"layoutContainer\">\n        <div class=\"pane ui-layout-north\" id=\"topBar\">\n          <a class=\"logo\" href=\"/\"><img src=\"/styles/img/logo-geohazard.png\"></a>\n          <div id=\"contextsMenu\"></div>\n          <div id=\"loginDiv\"></div>\n          <div id=\"advancedToolsDiv\"></div>\n        </div>\n        <div class=\"pane ui-layout-center\">\n          <div class=\"pane ui-layout-center\" id=\"geobrowserMap\"></div>\n          <div class=\"pane ui-layout-south\">\n            <div class=\"row-fluid\">\n              <div class=\"span6\" style=\"position:relative\">\n                <ul class=\"nav nav-tabs miniTabs\" id=\"tabCurrentSearch\">\n                  <li class=\"active\"><a href=\"#\" data-toggle=\"tab\" class=\"tabPaneCurrentSearchResult\">Current search result</a></li>\n                  <!-- <li><a href=\"#\" data-toggle=\"tab\" class=\"tabPaneCurrentSearchInfo\">Current search info</a></li> -->\n                  <a href=\"javascript://\" class=\"text-warning searchWarning\" style=\"display: none\"><i class=\"fa fa-exclamation-triangle\"></i></a>\n                </ul>\n                <div id=\"osResultsTable\" class=\"miniTabsPane\">\n                  <p class=\"text-info\"><small>You have no features selected.</small></p>\n                </div>\n                <div id=\"addFeaturesButtons\">\n                  <div class=\"addAllFeatures\" data-title=\"Add all features to the basket\"><i class=\"fa fa-arrow-circle-right\"></i></i></div>\n                  <div class=\"addSelectedFeatures\" data-title=\"Add selected features to the basket\"><i class=\"fa fa-arrow-circle-o-right\"></i></div>\n                </div>\n                <div id=\"osCurrentSearchInfo\" class=\"miniTabsPane\">\n                  <p class=\"text-info\"><small>Current search info...</small></p>\n                </div>\n              </div>\n              <div class=\"span6\" style=\"position:relative\">\n                <ul class=\"nav nav-tabs miniTabs\" id=\"tabDPFB\">\n                  <li class=\"active\"><a href=\"#\" data-toggle=\"tab\" class=\"tabPaneFeaturesBasket\">Features Basket</a></li>\n                  <li><a href=\"#\" data-toggle=\"tab\" class=\"tabPaneDataPackages\">Data Packages</a></li>\n                </ul>\n                <div id=\"featuresBasket\" class=\"miniTabsPane\">\n                  <!-- <a class=\"switchToDataPackagesPanelBtn\" href=\"javascript://\"><i class=\"fa fa-inbox\"></i> Data Packages</a> -->\n                  <div id=\"basketOpensearchTable\"></div>\n                  <div class=\"dropMessage\">\n                    <p>Drop here<small>To add features to the basket</small></p>\n                  </div>\n                </div>\n                <div id=\"dataPackagesPanel\" class=\"miniTabsPane\"></div>\n                \n              </div>            \n            </div>\n          </div>  \n        </div>\n        <div class=\"pane ui-layout-east\" id=\"servicesPanel\"></div>\n      </div>",
+                "date": "2009-01-23T09:08:56.000Z/2016-01-23T09:14:08.000Z",
+                "identifier": "https://geohazards-tep.eo.esa.int/t2api/apps/search?uid=global",
+                "links": [
+                    {
+                        "@href": "https://geohazards-tep.eo.esa.int/t2api/apps/search?uid=global&format=atom",
+                        "@rel": "self",
+                        "@title": "Reference link",
+                        "@type": "application/atom+xml"
+                    },
+                    {
+                        "@href": "https://geohazards-tep.eo.esa.int/t2api/apps/description",
+                        "@rel": "search",
+                        "@title": "OpenSearch Description link",
+                        "@type": "application/opensearchdescription+xml"
+                    }
+                ],
+                "offering": {
+                    "@code": "http://www.terradue.com/spec/owc/1.0/req/atom/datacontext",
+                    "operation": [
+                        {
+                            "@code": "DescribeDataset",
+                            "@href": "https://data.terradue.com/gs/catalogue/tepqw/gtfeature/description",
+                            "@method": "GET",
+                            "@type": "application/opensearchdescription+xml",
+                            "styleSet": "EO Data/Legacy Collections"
+                        },
+                        {
+                            "@code": "SearchDataset",
+                            "@href": "https://data.terradue.com/gs/catalogue/tepqw/gtfeature/search?q=envisat&format=json",
+                            "@method": "GET",
+                            "@type": "application/json",
+                            "styleSet": "EO Data/Test preset query"
+                        },
+                        {
+                            "@code": "SearchSeries",
+                            "@href": "https://geohazards-tep.eo.esa.int/t2api/data/collection/search?format=json&q=eodata",
+                            "@method": "GET",
+                            "@type": "application/json",
+                            "styleSet": "EO Data/*"
+                        },
+                        {
+                            "@code": "DescribeDataset",
+                            "@href": "https://data.terradue.com/gs/catalogue/tepqwsr/gtfeature/description",
+                            "@method": "GET",
+                            "@type": "application/opensearchdescription+xml",
+                            "styleSet": "EO-based products"
+                        },
+                        {
+                            "@code": "DescribeDataset",
+                            "@href": "https://data.terradue.com/gs/catalogue/tepqwpub/gtfeature/description",
+                            "@method": "GET",
+                            "@type": "application/opensearchdescription+xml",
+                            "styleSet": "Publications"
+                        },
+                        {
+                            "@code": "DescribeDataset",
+                            "@href": "https://data.terradue.com/gs/catalogue/users/gtfeature/description",
+                            "@method": "GET",
+                            "@type": "application/opensearchdescription+xml",
+                            "styleSet": "Community"
+                        }
+                    ],
+                    "styleSet": [
+                        {
+                            "abstract": "Legacy collections to be discarded when all new collections shall be recovered",
+                            "default": "true",
+                            "legendURL": {
+                                "@href": "http://www.terradue.com/images/logo-t2.png",
+                                "@type": "image/png"
+                            },
+                            "name": "EO Data/Legacy Collections",
+                            "title": "Default Data Collections"
+                        },
+                        {
+                            "abstract": "Data collection with dataset of products resulting of a processing on the platform",
+                            "name": "EO-based products",
+                            "title": "EO based Data Collections"
+                        }
+                    ]
+                },
+                "publisher": "Terradue",
+                "rights": "Fee:NONE / Contraints:NONE",
+                "summary": "This is the OWS context definining the Geohazards thematic application as per version 1 of the platform.",
+                "title": "Geohazards global thematic application",
+                "updated": "2016-03-07T18:11:19Z"
+            },
+            "type": "Feature"
+        }
+    ],
+    "properties": {
+        "box": "90 -180 -90 180",
+        "categories": [
+            {
+                "@label": "Thematic Application",
+                "@scheme": "http://www.terradue.com/feed",
+                "@term": "thematicapplication"
+            }
+        ],
+        "links": [
+            {
+                "@href": "https://geohazards-tep.eo.esa.int/t2api/apps/search?q=global&format=atom",
+                "@rel": "self",
+                "@title": "Reference link",
+                "@type": "application/atom+xml"
+            },
+            {
+                "@href": "https://geohazards-tep.eo.esa.int/t2api/apps/description",
+                "@rel": "search",
+                "@title": "OpenSearch Description link",
+                "@type": "application/opensearchdescription+xml"
+            }
+        ],
+        "publisher": "Terradue",
+        "title": "Geohazards thematic applications search results",
+        "totalResults": "0",
+        "updated": "2016-03-08T07:17:24Z"
+    },
+    "type": "FeatureCollection"
+}
