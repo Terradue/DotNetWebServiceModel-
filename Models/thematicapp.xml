@@ -93,28 +93,30 @@
         <owc:title>EO based Data Collections</owc:title>
         <owc:abstract>Data collection with dataset of products resulting of a processing on the platform</owc:abstract>
       </owc:styleSet>
+    </owc:offering>
+    <owc:offering code="http://www.terradue.com/spec/owc/1.0/req/atom/opensearch">
       <owc:operation code="DescribeDataset" href="https://data.terradue.com/gs/catalogue/tepqw/gtfeature/description" type="application/opensearchdescription+xml" method="GET">
-        <t2:styleSet>EO Data/Legacy Collections</t2:styleSet>
+        <t2:datacontext>EO Data/Legacy Collections</t2:datacontext>
         <!-- This define an entry in the menu EOData called 'Old Collections' with the opensearch description set to the href -->
       </owc:operation>
       <owc:operation code="SearchDataset" href="https://data.terradue.com/gs/catalogue/tepqw/gtfeature/search?q=envisat&amp;format=json" type="application/json" method="GET">
-        <t2:styleSet>EO Data/Test preset query</t2:styleSet>
+        <t2:datacontext>EO Data/Test preset query</t2:datacontext>
         <!-- This define an entry in the menu EOData called 'Old Collections' with the opensearch description set to the href -->
       </owc:operation>
-      <owc:operation code="SearchSeries" href="https://geohazards-tep.eo.esa.int/t2api/data/collection/search?format=json&amp;q=eodata" type="application/json" method="GET">
-        <t2:styleSet>EO Data/*</t2:styleSet>
+      <owc:operation code="ListSeries" href="https://geohazards-tep.eo.esa.int/t2api/data/collection/search?format=json&amp;q=eodata" type="application/json" method="GET">
+        <t2:datacontext>EO Data/*</t2:datacontext>
         <!-- This define a list of entries in the menu EOData from the search at the href -->
       </owc:operation>
       <owc:operation code="DescribeDataset" href="https://data.terradue.com/gs/catalogue/tepqwsr/gtfeature/description" type="application/opensearchdescription+xml" method="GET">
-        <t2:styleSet>EO-based products</t2:styleSet>
+        <t2:datacontext>EO-based products</t2:datacontext>
         <!-- This define a list of entries in the menu EOData from the search at the href -->
       </owc:operation>
       <owc:operation code="DescribeDataset" href="https://data.terradue.com/gs/catalogue/tepqwpub/gtfeature/description" type="application/opensearchdescription+xml" method="GET">
-        <t2:styleSet>Publications</t2:styleSet>
+        <t2:datacontext>Publications</t2:datacontext>
         <!-- This define a list of entries in the menu EOData from the search at the href -->
       </owc:operation>
       <owc:operation code="DescribeDataset" href="https://data.terradue.com/gs/catalogue/users/gtfeature/description" type="application/opensearchdescription+xml" method="GET">
-        <t2:styleSet>Community</t2:styleSet>
+        <t2:datacontext>Community</t2:datacontext>
         <!-- This define a list of entries in the menu EOData from the search at the href -->
       </owc:operation>
     </owc:offering>

@@ -21,10 +21,15 @@ namespace Terradue.WebService.Model.Tests {
 
             AtomFeed feed = AtomFeed.Load(xr);
 
+            file.Close();
+
             FeatureCollectionResult fc = FeatureCollectionResult.FromOpenSearchResultCollection(feed);
 
-            string json = fc.SerializeToString();
+            FileStream jsonfile = new FileStream("../../../Models/thematicapp.json", FileMode.Create, FileAccess.Write);
 
+            fc.SerializeToStream(jsonfile);
+
+            jsonfile.Close();
 
 
         }

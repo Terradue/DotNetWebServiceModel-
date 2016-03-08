@@ -55,70 +55,157 @@
                         "@type": "application/opensearchdescription+xml"
                     }
                 ],
-                "offering": {
-                    "@code": "http://www.terradue.com/spec/owc/1.0/req/atom/datacontext",
-                    "operation": [
-                        {
-                            "@code": "DescribeDataset",
-                            "@href": "https://data.terradue.com/gs/catalogue/tepqw/gtfeature/description",
-                            "@method": "GET",
-                            "@type": "application/opensearchdescription+xml",
-                            "styleSet": "EO Data/Legacy Collections"
-                        },
-                        {
-                            "@code": "SearchDataset",
-                            "@href": "https://data.terradue.com/gs/catalogue/tepqw/gtfeature/search?q=envisat&format=json",
-                            "@method": "GET",
-                            "@type": "application/json",
-                            "styleSet": "EO Data/Test preset query"
-                        },
-                        {
-                            "@code": "SearchSeries",
-                            "@href": "https://geohazards-tep.eo.esa.int/t2api/data/collection/search?format=json&q=eodata",
-                            "@method": "GET",
-                            "@type": "application/json",
-                            "styleSet": "EO Data/*"
-                        },
-                        {
-                            "@code": "DescribeDataset",
-                            "@href": "https://data.terradue.com/gs/catalogue/tepqwsr/gtfeature/description",
-                            "@method": "GET",
-                            "@type": "application/opensearchdescription+xml",
-                            "styleSet": "EO-based products"
-                        },
-                        {
-                            "@code": "DescribeDataset",
-                            "@href": "https://data.terradue.com/gs/catalogue/tepqwpub/gtfeature/description",
-                            "@method": "GET",
-                            "@type": "application/opensearchdescription+xml",
-                            "styleSet": "Publications"
-                        },
-                        {
-                            "@code": "DescribeDataset",
-                            "@href": "https://data.terradue.com/gs/catalogue/users/gtfeature/description",
-                            "@method": "GET",
-                            "@type": "application/opensearchdescription+xml",
-                            "styleSet": "Community"
-                        }
-                    ],
-                    "styleSet": [
-                        {
-                            "abstract": "Legacy collections to be discarded when all new collections shall be recovered",
-                            "default": "true",
-                            "legendURL": {
-                                "@href": "http://www.terradue.com/images/logo-t2.png",
-                                "@type": "image/png"
+                "offering": [
+                    {
+                        "@code": "http://www.terradue.com/spec/owc/1.0/req/atom/datacontext",
+                        "styleSet": [
+                            {
+                                "abstract": "Legacy collections to be discarded when all new collections shall be recovered",
+                                "default": "true",
+                                "legendURL": {
+                                    "@href": "http://www.terradue.com/images/logo-t2.png",
+                                    "@type": "image/png"
+                                },
+                                "name": "EO Data/Legacy Collections",
+                                "title": "Default Data Collections"
                             },
-                            "name": "EO Data/Legacy Collections",
-                            "title": "Default Data Collections"
-                        },
-                        {
-                            "abstract": "Data collection with dataset of products resulting of a processing on the platform",
-                            "name": "EO-based products",
-                            "title": "EO based Data Collections"
+                            {
+                                "abstract": "Data collection with dataset of products resulting of a processing on the platform",
+                                "name": "EO-based products",
+                                "title": "EO based Data Collections"
+                            }
+                        ]
+                    },
+                    {
+                        "@code": "http://www.terradue.com/spec/owc/1.0/req/atom/opensearch",
+                        "operation": [
+                            {
+                                "@code": "DescribeDataset",
+                                "@href": "https://data.terradue.com/gs/catalogue/tepqw/gtfeature/description",
+                                "@method": "GET",
+                                "@type": "application/opensearchdescription+xml",
+                                "datacontext": "EO Data/Legacy Collections"
+                            },
+                            {
+                                "@code": "SearchDataset",
+                                "@href": "https://data.terradue.com/gs/catalogue/tepqw/gtfeature/search?q=envisat&format=json",
+                                "@method": "GET",
+                                "@type": "application/json",
+                                "datacontext": "EO Data/Test preset query"
+                            },
+                            {
+                                "@code": "ListSeries",
+                                "@href": "https://geohazards-tep.eo.esa.int/t2api/data/collection/search?format=json&q=eodata",
+                                "@method": "GET",
+                                "@type": "application/json",
+                                "datacontext": "EO Data/*"
+                            },
+                            {
+                                "@code": "DescribeDataset",
+                                "@href": "https://data.terradue.com/gs/catalogue/tepqwsr/gtfeature/description",
+                                "@method": "GET",
+                                "@type": "application/opensearchdescription+xml",
+                                "datacontext": "EO-based products"
+                            },
+                            {
+                                "@code": "DescribeDataset",
+                                "@href": "https://data.terradue.com/gs/catalogue/tepqwpub/gtfeature/description",
+                                "@method": "GET",
+                                "@type": "application/opensearchdescription+xml",
+                                "datacontext": "Publications"
+                            },
+                            {
+                                "@code": "DescribeDataset",
+                                "@href": "https://data.terradue.com/gs/catalogue/users/gtfeature/description",
+                                "@method": "GET",
+                                "@type": "application/opensearchdescription+xml",
+                                "datacontext": "Community"
+                            }
+                        ]
+                    },
+                    {
+                        "@code": "http://www.terradue.com/spec/owc/1.0/req/atom/mapfeatures",
+                        "styleSet": [
+                            {
+                                "abstract": "Default map",
+                                "content": "mapbox:tepgeohazards.l6mdm2gn",
+                                "default": "true",
+                                "legendURL": {
+                                    "@href": "http://www.terradue.com/images/logo-t2.png",
+                                    "@type": "image/png"
+                                },
+                                "name": "Default",
+                                "type": "background"
+                            },
+                            {
+                                "abstract": "Light Map",
+                                "content": "mapbox:tepgeohazards.l6md4p2l",
+                                "name": "Light Map",
+                                "type": "background"
+                            },
+                            {
+                                "abstract": "Natural Earth",
+                                "content": "mapbox:tepgeohazards.l6md2364",
+                                "name": "Natural Earth",
+                                "type": "background"
+                            },
+                            {
+                                "abstract": "Dark Map",
+                                "content": "mapbox:tepgeohazards.l6mdoh89",
+                                "name": "Dark Map",
+                                "type": "background"
+                            },
+                            {
+                                "abstract": "Google Road Map",
+                                "content": "google:ROADMAP",
+                                "name": "Google Road Map",
+                                "type": "background"
+                            },
+                            {
+                                "abstract": "Charter Activations",
+                                "content": {
+                                    "@href": "/t2api/disastercharter"
+                                },
+                                "default": "true",
+                                "name": "Charter Activations",
+                                "type": "background"
+                            },
+                            {
+                                "abstract": "Sentinel-1A SAR IW Level-0 Density Map",
+                                "content": {
+                                    "@href": "https://va4h01.esa.int/geoserver/S1A_DENSITYMAPS_GLOBAL/S1A_IW_RAW_.global.spatial-coverage/ows"
+                                },
+                                "name": "Sentinel-1A SAR IW Level-0 Density Map",
+                                "type": "layer"
+                            },
+                            {
+                                "abstract": "Sentinel-1A SAR IW SLC Density Map",
+                                "content": {
+                                    "@href": "https://va4h01.esa.int/geoserver/S1A_DENSITYMAPS_GLOBAL/S1A_IW_SLC_.global.spatial-coverage/ows"
+                                },
+                                "name": "Sentinel-1A SAR IW SLC Density Map",
+                                "type": "layer"
+                            },
+                            {
+                                "abstract": "ERS+ENVISAT SAR IM Level-0 Density Map",
+                                "content": {
+                                    "@href": "https://va4h01.esa.int/geoserver/VA4_DENSITYMAPS_GLOBAL/L0-SAR-IM.global.spatial-coverage/ows"
+                                },
+                                "name": "ERS+ENVISAT SAR IM Level-0 Density Map",
+                                "type": "layer"
+                            }
+                        ]
+                    },
+                    {
+                        "@code": "http://www.opengis.net/spec/owc/1.0/req/atom/wps",
+                        "operation": {
+                            "@code": "ListProcess",
+                            "@href": "https://geohazards-tep.eo.esa.int/t2api/service/wps/search?format=json",
+                            "@method": "GET",
+                            "@type": "application/json"
                         }
-                    ]
-                },
+                    }
+                ],
                 "publisher": "Terradue",
                 "rights": "Fee:NONE / Contraints:NONE",
                 "summary": "This is the OWS context definining the Geohazards thematic application as per version 1 of the platform.",
@@ -154,7 +241,7 @@
         "publisher": "Terradue",
         "title": "Geohazards thematic applications search results",
         "totalResults": "0",
-        "updated": "2016-03-08T07:17:24Z"
+        "updated": "2016-03-08T10:26:04Z"
     },
     "type": "FeatureCollection"
 }
