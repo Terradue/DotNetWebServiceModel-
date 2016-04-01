@@ -38,7 +38,9 @@
                     }
                 ],
                 "box": "90 -180 -90 180",
-                "content": "\n      <div id=\"layoutContainer\">\n        <div class=\"pane ui-layout-north\" id=\"topBar\">\n          <a class=\"logo\" href=\"/\"><img src=\"/styles/img/logo-geohazard.png\"></a>\n          <div id=\"contextsMenu\"></div>\n          <div id=\"loginDiv\"></div>\n          <div id=\"advancedToolsDiv\"></div>\n        </div>\n        <div class=\"pane ui-layout-center\">\n          <div class=\"pane ui-layout-center\" id=\"geobrowserMap\"></div>\n          <div class=\"pane ui-layout-south\">\n            <div class=\"row-fluid\">\n              <div class=\"span6\" style=\"position:relative\">\n                <ul class=\"nav nav-tabs miniTabs\" id=\"tabCurrentSearch\">\n                  <li class=\"active\"><a href=\"#\" data-toggle=\"tab\" class=\"tabPaneCurrentSearchResult\">Current search result</a></li>\n                  <!-- <li><a href=\"#\" data-toggle=\"tab\" class=\"tabPaneCurrentSearchInfo\">Current search info</a></li> -->\n                  <a href=\"javascript://\" class=\"text-warning searchWarning\" style=\"display: none\"><i class=\"fa fa-exclamation-triangle\"></i></a>\n                </ul>\n                <div id=\"osResultsTable\" class=\"miniTabsPane\">\n                  <p class=\"text-info\"><small>You have no features selected.</small></p>\n                </div>\n                <div id=\"addFeaturesButtons\">\n                  <div class=\"addAllFeatures\" data-title=\"Add all features to the basket\"><i class=\"fa fa-arrow-circle-right\"></i></i></div>\n                  <div class=\"addSelectedFeatures\" data-title=\"Add selected features to the basket\"><i class=\"fa fa-arrow-circle-o-right\"></i></div>\n                </div>\n                <div id=\"osCurrentSearchInfo\" class=\"miniTabsPane\">\n                  <p class=\"text-info\"><small>Current search info...</small></p>\n                </div>\n              </div>\n              <div class=\"span6\" style=\"position:relative\">\n                <ul class=\"nav nav-tabs miniTabs\" id=\"tabDPFB\">\n                  <li class=\"active\"><a href=\"#\" data-toggle=\"tab\" class=\"tabPaneFeaturesBasket\">Features Basket</a></li>\n                  <li><a href=\"#\" data-toggle=\"tab\" class=\"tabPaneDataPackages\">Data Packages</a></li>\n                </ul>\n                <div id=\"featuresBasket\" class=\"miniTabsPane\">\n                  <!-- <a class=\"switchToDataPackagesPanelBtn\" href=\"javascript://\"><i class=\"fa fa-inbox\"></i> Data Packages</a> -->\n                  <div id=\"basketOpensearchTable\"></div>\n                  <div class=\"dropMessage\">\n                    <p>Drop here<small>To add features to the basket</small></p>\n                  </div>\n                </div>\n                <div id=\"dataPackagesPanel\" class=\"miniTabsPane\"></div>\n                \n              </div>            \n            </div>\n          </div>  \n        </div>\n        <div class=\"pane ui-layout-east\" id=\"servicesPanel\"></div>\n      </div>",
+                "content": {
+                	"@href": "/geobrowser/thematicAppContent.html"
+                },
                 "date": "2009-01-23T09:08:56.000Z/2016-01-23T09:14:08.000Z",
                 "identifier": "https://geohazards-tep.eo.esa.int/t2api/apps/search?uid=global",
                 "links": [
@@ -124,43 +126,58 @@
                         ]
                     },
                     {
-                        "@code": "http://www.terradue.com/spec/owc/1.0/req/atom/mapfeatures",
-                        "styleSet": [
+                    	"@code": "http://www.terradue.com/spec/owc/1.0/req/atom/opensearchtable"
+                    },
+                    {
+                    	"@code": "http://www.terradue.com/spec/owc/1.0/req/atom/datapackage",
+                    	"operation": [
+                    		{
+	                            "@code": "Search",
+	                            "@href": "/data/package/search?format=json",
+	                            "@method": "GET",
+	                            "@type": "application/json"
+                    		}
+                        ]
+                    },
+                    {
+						"@code": "http://www.terradue.com/spec/owc/1.0/req/atom/basemaps",
+						"styleSet": [
                             {
                                 "abstract": "Default map",
-                                "content": "mapbox:tepgeohazards.l6mdm2gn",
-                                "default": "true",
-                                "legendURL": {
-                                    "@href": "http://www.terradue.com/images/logo-t2.png",
-                                    "@type": "image/png"
-                                },
+                                "content": "tepgeohazards.l6mdm2gn",
                                 "name": "Default",
-                                "type": "background"
+                                "type": "mapbox"
                             },
                             {
                                 "abstract": "Light Map",
-                                "content": "mapbox:tepgeohazards.l6md4p2l",
+                                "content": "tepgeohazards.l6md4p2l",
                                 "name": "Light Map",
-                                "type": "background"
+                                "type": "mapbox"
                             },
                             {
                                 "abstract": "Natural Earth",
-                                "content": "mapbox:tepgeohazards.l6md2364",
+                                "content": "tepgeohazards.l6md2364",
+                                "default": "true",
                                 "name": "Natural Earth",
-                                "type": "background"
+                                "type": "mapbox"
                             },
                             {
                                 "abstract": "Dark Map",
-                                "content": "mapbox:tepgeohazards.l6mdoh89",
+                                "content": "tepgeohazards.l6mdoh89",
                                 "name": "Dark Map",
-                                "type": "background"
+                                "type": "mapbox"
                             },
                             {
                                 "abstract": "Google Road Map",
-                                "content": "google:ROADMAP",
+                                "content": "ROADMAP",
                                 "name": "Google Road Map",
-                                "type": "background"
-                            },
+                                "type": "google"
+                            }
+                        ]
+                   	},
+                    {
+                        "@code": "http://www.terradue.com/spec/owc/1.0/req/atom/mapfeatures",
+                        "styleSet": [
                             {
                                 "abstract": "Charter Activations",
                                 "content": {
