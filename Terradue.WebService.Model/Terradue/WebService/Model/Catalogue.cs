@@ -5,6 +5,7 @@ using ServiceStack.ServiceHost;
 namespace Terradue.WebService.Model
 {
 	[Route("/catalogue/{serieId}/description", "GET", Summary = "GET a serie descriptions", Notes = "")]
+	[Route("/data/collection/{serieId}/description", "GET", Summary = "GET a serie descriptions", Notes = "")]
 	public class GetOpensearchDescription : IReturn<HttpResult>
 	{
 		[ApiMember(Name="serieId", Description = "Series id", ParameterType = "query", DataType = "string", IsRequired = true)]
@@ -12,9 +13,11 @@ namespace Terradue.WebService.Model
 	}
 
 	[Route("/catalogue/description", "GET", Summary = "GET a list of series descriptions", Notes = "")]
+    [Route("/data/collection/description", "GET", Summary = "GET a list of series descriptions", Notes = "")]
 	public class GetOpensearchDescriptions : IReturn<HttpResult>{}
 
 	[Route("/catalogue/{serieId}/search", "GET", Summary = "GET a serie search", Notes = "")]
+    [Route("/data/collection/{serieId}/search", "GET", Summary = "GET a serie search", Notes = "")]
 	public class GetOpensearchSearch
 	{
 		[ApiMember(Name="serieId", Description = "Series id", ParameterType = "query", DataType = "string", IsRequired = true)]
@@ -22,6 +25,7 @@ namespace Terradue.WebService.Model
 	}
 
 	[Route("/catalogue/search", "GET", Summary = "GET a list of series search", Notes = "")]
+    [Route("/data/collection/search", "GET", Summary = "GET a list of series search", Notes = "")]
 	public class GetOpensearchSearchs{}
 
     [Route("/data/package/search", "GET", Summary = "search for datapackage", Notes = "Return all data packages accessible by the user")]
