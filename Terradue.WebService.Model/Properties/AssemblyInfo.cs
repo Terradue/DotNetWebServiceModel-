@@ -5,13 +5,13 @@ using System.Runtime.CompilerServices;
 
 \namespace Terradue.WebService.Model
 @{
-    Terradue.WebService.Model Software Package
+    Terradue.WebService.Model Software Package provides with all the web services interfaces and their REST model.
 
     \xrefitem sw_version "Versions" "Software Package Version" 1.1.3
 
     \xrefitem sw_link "Links" "Software Package List" [Terradue.WebService.Model](https://git.terradue.com/sugar/terradue-webservice-model)
 
-    \xrefitem sw_license "License" "Software License" [incubating](https://git.terradue.com/sugar/terradue-webservice-model)
+    \xrefitem sw_license "License" "Software License" [AGPL](https://git.terradue.com/sugar/terradue-webservice-model/LICENSE)
 
     \xrefitem sw_req "Require" "Software Dependencies" \ref Terradue.Portal
 
