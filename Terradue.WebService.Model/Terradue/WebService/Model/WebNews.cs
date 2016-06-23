@@ -69,7 +69,7 @@ namespace Terradue.WebService.Model {
             this.Content = entity.Content;
             this.Date = entity.Time;
             this.Author = entity.Author;
-            this.AuthorImageUrl = entity.AuthorImageUrl;
+            this.AuthorImageUrl = entity.AuthorImage;
             this.Url = entity.Url;
             this.Tags = entity.Tags;
             this.Type = entity.EntityType.Keyword;
@@ -82,7 +82,7 @@ namespace Terradue.WebService.Model {
             result.Abstract = this.Abstract;
             result.Content = this.Content;
             result.Author = this.Author;
-            result.AuthorImageUrl = this.AuthorImageUrl;
+            result.AuthorImage = this.AuthorImageUrl;
             result.Url = this.Url;
             result.Tags = this.Tags;
             if (this.Date != DateTime.MinValue) result.Time = this.Date;
