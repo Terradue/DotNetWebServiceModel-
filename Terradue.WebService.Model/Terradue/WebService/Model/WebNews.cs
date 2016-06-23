@@ -50,6 +50,9 @@ namespace Terradue.WebService.Model {
         [ApiMember(Name = "author", Description = "News author", ParameterType = "query", DataType = "string")]
         public string Author { get; set; }
 
+        [ApiMember(Name = "authorImageUrl", Description = "News author image url", ParameterType = "query", DataType = "string")]
+        public string AuthorImageUrl { get; set; }
+
         [ApiMember(Name = "url", Description = "News url link", ParameterType = "query", DataType = "string")]
         public string Url { get; set; }
 
@@ -66,6 +69,7 @@ namespace Terradue.WebService.Model {
             this.Content = entity.Content;
             this.Date = entity.Time;
             this.Author = entity.Author;
+            this.AuthorImageUrl = entity.AuthorImageUrl;
             this.Url = entity.Url;
             this.Tags = entity.Tags;
             this.Type = entity.EntityType.Keyword;
@@ -78,6 +82,7 @@ namespace Terradue.WebService.Model {
             result.Abstract = this.Abstract;
             result.Content = this.Content;
             result.Author = this.Author;
+            result.AuthorImageUrl = this.AuthorImageUrl;
             result.Url = this.Url;
             result.Tags = this.Tags;
             if (this.Date != DateTime.MinValue) result.Time = this.Date;
