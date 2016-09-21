@@ -29,10 +29,16 @@ namespace Terradue.WebService.Model
 	public class GetOpensearchSearchs{}
 
     [Route("/data/package/search", "GET", Summary = "search for datapackage", Notes = "Return all data packages accessible by the user")]
-    public class DataPackagesSearchRequest {}
+    public class DataPackagesSearchRequest {
+        [ApiMember (Name = "key", Description = "User Api Key", ParameterType = "query", DataType = "string", IsRequired = false)]
+        public string Key { get; set; }
+    }
 
     [Route("/data/package/description", "GET", Summary = "opensearch description for datapackage", Notes = "Return all data packages accessible by the user")]
-    public class DataPackagesDescriptionRequest {}
+    public class DataPackagesDescriptionRequest {
+        [ApiMember (Name = "key", Description = "User Api Key", ParameterType = "query", DataType = "string", IsRequired = false)]
+        public string Key { get; set; }
+    }
 
     [Route("/data/package/{DataPackageId}/search", "GET", Summary = "search into the items of a datapackage", Notes = "Data Package is selected from its ID")]
     public class DataPackageSearchRequest {
