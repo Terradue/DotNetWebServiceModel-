@@ -32,5 +32,5 @@ using NuGet4Mono.Extensions;
 [assembly: AssemblyLicenseUrl("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-[assembly: AssemblyVersion("1.1.12")]
-[assembly: AssemblyInformationalVersion("1.1.12")]
+[assembly: AssemblyVersion("1.1.13")]
+[assembly: AssemblyInformationalVersion("1.1.13")]
