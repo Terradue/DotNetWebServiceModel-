@@ -97,6 +97,9 @@
     <Compile Include="Terradue\WebService\Model\Global.cs" />
     <Compile Include="Terradue\WebService\Model\WebWpsProvider.cs" />
     <Compile Include="Terradue\WebService\Model\WebGroup.cs" />
+    <Compile Include="Terradue\WebService\Model\WebDomain.cs" />
+    <Compile Include="Terradue\WebService\Model\WebPrivilege.cs" />
+    <Compile Include="Terradue\WebService\Model\WebRole.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Terradue\" />
