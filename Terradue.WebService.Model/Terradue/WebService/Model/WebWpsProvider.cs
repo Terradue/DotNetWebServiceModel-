@@ -60,6 +60,8 @@ namespace Terradue.WebService.Model {
         public String Url { get; set; }
         [ApiMember(Name="Proxy", Description = "Define if WPS has to be proxied", ParameterType = "query", DataType = "bool", IsRequired = true)]
         public bool Proxy { get; set; }
+        [ApiMember(Name="Contact", Description = "WPS contact point", ParameterType = "query", DataType = "String", IsRequired = true)]
+        public String Contact { get; set; }
 
         public WebWpsProvider() {}
 
@@ -70,6 +72,7 @@ namespace Terradue.WebService.Model {
         public WebWpsProvider(WpsProvider entity) : base(entity) {
             this.Url = entity.BaseUrl;
             this.Proxy = entity.Proxy;
+            this.Contact = entity.Contact;
         }
 
         /// <summary>
@@ -84,6 +87,7 @@ namespace Terradue.WebService.Model {
             entity.Name = this.Name;
             entity.BaseUrl = this.Url;
             entity.Proxy = this.Proxy;
+            entity.Contact = this.Contact;
 
             return entity;
         }
