@@ -5,30 +5,10 @@ using Terradue.Portal;
 
 namespace Terradue.WebService.Model {
     
-    //[Route("/priv/{id}", "GET", Summary = "GET the privilege", Notes = "Privilege is found from id")]
-    //public class PrivilegeGetRequest : IReturn<WebPrivilege> {
-    //    [ApiMember(Name = "id", Description = "User id", ParameterType = "query", DataType = "int", IsRequired = true)]
-    //    public int Id { get; set; }
-    //}
-
     [Route ("/priv", "GET", Summary = "GET the privileges", Notes = "")]
     public class PrivilegesGetRequest : IReturn<List<WebPrivilege>> {}
 
-    //[Route ("/priv", "POST", Summary = "POST the privilege", Notes = "")]
-    //public class PrivilegeCreateRequest : WebPrivilege, IReturn<WebPrivilege> { }
-
-    //[Route ("/priv", "PUT", Summary = "PUT the privilege", Notes = "")]
-    //public class PrivilegeUpdateRequest : WebPrivilege, IReturn<WebPrivilege> { }
-
-    //[Route ("/priv/{id}", "DELETE", Summary = "DELETE the privilege", Notes = "Privilege is found from id")]
-    //public class PrivilegeDeleteRequest : IReturn<WebPrivilege>
-    //{
-    //    [ApiMember (Name = "id", Description = "User id", ParameterType = "query", DataType = "int", IsRequired = true)]
-    //    public int Id { get; set; }
-    //}
-
-
-
+    
     //-------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------
@@ -59,8 +39,8 @@ namespace Terradue.WebService.Model {
         /// </summary>
         /// <returns>The entity.</returns>
         /// <param name="context">Context.</param>
-		public Privilege ToEntity(IfyContext context, Privilege input) {
-			Privilege privilege = input ?? new Privilege (context);
+        public Privilege ToEntity(IfyContext context, Privilege input) {
+            Privilege privilege = input ?? new Privilege (context);
             privilege.Identifier = this.Identifier;
             privilege.Name = this.Name;
             privilege.OperationChar = Operation;
