@@ -1,7 +1,7 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using ServiceStack.ServiceHost;
-using System.Collections.Generic;
 using Terradue.Portal;
+
 namespace Terradue.WebService.Model {
 
     [Route("/role/{id}", "GET", Summary = "GET the role", Notes = "Role is found from id")]

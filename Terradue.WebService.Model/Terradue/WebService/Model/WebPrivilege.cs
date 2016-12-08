@@ -1,7 +1,7 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using ServiceStack.ServiceHost;
-using System.Collections.Generic;
 using Terradue.Portal;
+using Terradue.WebService.Model;
 
 namespace Terradue.WebService.Model {
     
