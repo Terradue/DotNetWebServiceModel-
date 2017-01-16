@@ -73,7 +73,7 @@ namespace Terradue.WebService.Model {
             else 
                 result.Identifier = this.Identifier;
             result.IsDefault = this.IsDefault;
-
+            result.DomainId = this.DomainId;
             return result;
         }
     }

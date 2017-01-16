@@ -62,6 +62,7 @@ namespace Terradue.WebService.Model {
             entity.Identifier = this.Identifier;
             entity.Name = this.Name;
             entity.Description = this.Description;
+            entity.DomainId = this.DomainId;
             entity.CatalogueDescriptionUrl = this.CatalogueDescriptionUrl;
 
             return entity;
