@@ -3,3 +3,5 @@ Terradue.WebService.Model.userprefs
 Terradue.WebService.Model/bin
 Terradue.WebService.Model/obj
 Terradue.WebService.Model/core
+Terradue.WebService.Model.Tests/bin
+Terradue.WebService.Model.Tests/obj
