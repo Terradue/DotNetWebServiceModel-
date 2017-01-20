@@ -6,6 +6,7 @@ using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface.ServiceModel;
 using ServiceStack.ServiceInterface;
 using Terradue.Portal;
+using ServiceStack.Common.Web;
 
 namespace Terradue.WebService.Model {
 
@@ -17,6 +18,12 @@ namespace Terradue.WebService.Model {
 
     [Route("/user/current", "GET", Summary = "GET the current user", Notes = "User is the current user")]
     public class GetCurrentUser : IReturn<WebUser> {}
+
+    [Route("/user/search", "GET", Summary = "GET user as opensearch", Notes = "")]
+    public class UserSearchRequest : IReturn<HttpResult> { }
+
+    [Route("/user/description", "GET", Summary = "GET user as opensearch", Notes = "")]
+    public class UserDescriptionRequestTep : IReturn<HttpResult> { }
 
     [Route("/user", "GET", Summary = "GET a list of users", Notes = "Users can be filtered by Group")]
     public class GetUsers : IReturn<List<WebUser>> {
