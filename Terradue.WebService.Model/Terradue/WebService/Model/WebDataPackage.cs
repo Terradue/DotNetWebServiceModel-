@@ -46,15 +46,15 @@ namespace Terradue.WebService.Model {
 
     public class WebDataPackage : WebEntity
     {
-        [ApiMember(Name="IsDefault", Description = "Remote resource visibility (default = public)", ParameterType = "path", DataType = "bool", IsRequired = true)]
-        public bool IsDefault { get; set; }
+        [ApiMember(Name="Kind", Description = "Remote resource visibility (default = 1)", ParameterType = "path", DataType = "int", IsRequired = true)]
+        public int Kind { get; set; }
         [ApiMember(Name="Items", Description = "Data Package Resources", ParameterType = "path", DataType = "List<DataPackageItem>", IsRequired = false)]
         public List<WebDataPackageItem> Items { get; set; }
 
         public WebDataPackage () {}
 
         public WebDataPackage (RemoteResourceSet entity) : base(entity){
-            this.IsDefault = entity.IsDefault;
+            this.Kind = entity.Kind;
             this.Items = new List<WebDataPackageItem>();
             foreach (RemoteResource item in entity.Resources) this.Items.Add(new WebDataPackageItem(item));
         }
@@ -72,8 +72,8 @@ namespace Terradue.WebService.Model {
                 result.Identifier = this.Name.Replace(" ","");
             else 
                 result.Identifier = this.Identifier;
-            result.IsDefault = this.IsDefault;
-            result.DomainId = this.DomainId;
+            result.Kind = this.Kind;
+            if(!string.IsNullOrEmpty(this.DomainId)) result.DomainId = Int32.Parse(this.DomainId);
             return result;
         }
     }
