@@ -126,6 +126,7 @@ namespace Terradue.WebService.Model {
         public Domain ToEntity(IfyContext context, Domain input) {
             Domain domain = input ?? new Domain (context);
             domain.Identifier = this.Identifier;
+            domain.Name = this.Name;
             domain.Description = Description;
             domain.Kind = (DomainKind)Kind;
             domain.IconUrl = IconeUrl;
