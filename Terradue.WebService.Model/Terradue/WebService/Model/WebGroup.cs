@@ -6,6 +6,7 @@ using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface.ServiceModel;
 using ServiceStack.ServiceInterface;
 using Terradue.Portal;
+using ServiceStack.Common.Web;
 
 namespace Terradue.WebService.Model {
 
@@ -56,6 +57,12 @@ namespace Terradue.WebService.Model {
         [ApiMember(Name = "id", Description = "Group id", ParameterType = "query", DataType = "int", IsRequired = true)]
         public int Id { get; set; }
     }
+
+    [Route("/group/search", "GET", Summary = "GET group as opensearch", Notes = "")]
+    public class GroupSearchRequest : IReturn<HttpResult> { }
+
+    [Route("/group/description", "GET", Summary = "GET group as opensearch", Notes = "")]
+    public class GroupDescriptionRequestTep : IReturn<HttpResult> { }
 
     //-------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------

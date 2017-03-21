@@ -45,6 +45,10 @@ namespace Terradue.WebService.Model {
         public String Version { get; set; }
         [ApiMember(Name="Available", Description = "Is service available", ParameterType = "query", DataType = "bool", IsRequired = true)]
         public bool Available { get; set; }
+        [ApiMember(Name="IconUrl", Description = "Service icon url", ParameterType = "query", DataType = "string", IsRequired = false)]
+        public string IconUrl { get; set; }
+        [ApiMember(Name = "Tags", Description = "Service Tags", ParameterType = "query", DataType = "List<string>", IsRequired = false)]
+        public List<string> Tags { get; set; }
 
         public WebService() {}
 
@@ -57,6 +61,8 @@ namespace Terradue.WebService.Model {
             this.Url = entity.Url;
             this.Version = entity.Version;
             this.Available = entity.Available;
+            this.IconUrl = entity.IconUrl;
+            this.Tags = entity.GetTagsAsList();
         }
 
         /// <summary>
@@ -74,6 +80,11 @@ namespace Terradue.WebService.Model {
             entity.Url = this.Url;
             entity.Version = this.Version;
             entity.Available = this.Available;
+            entity.IconUrl = this.IconUrl;
+            if (this.Tags != null) {
+                entity.Tags = "";
+                foreach (var tag in this.Tags) entity.AddTag(tag);
+            }
 
             return entity;
         }
@@ -105,7 +116,8 @@ namespace Terradue.WebService.Model {
             entity.Description = this.Description;
             entity.Url = this.Url;
             entity.Version = this.Version;
-
+            entity.IconUrl = this.IconUrl;
+            
             return entity;
         }
 
