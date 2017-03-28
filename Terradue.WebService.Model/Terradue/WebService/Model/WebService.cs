@@ -45,6 +45,8 @@ namespace Terradue.WebService.Model {
         public String Version { get; set; }
         [ApiMember(Name="Available", Description = "Is service available", ParameterType = "query", DataType = "bool", IsRequired = true)]
         public bool Available { get; set; }
+        [ApiMember(Name = "Quotable", Description = "Is service quotable", ParameterType = "query", DataType = "bool", IsRequired = true)]
+        public bool Quotable { get; set; }
         [ApiMember(Name="IconUrl", Description = "Service icon url", ParameterType = "query", DataType = "string", IsRequired = false)]
         public string IconUrl { get; set; }
         [ApiMember(Name = "Tags", Description = "Service Tags", ParameterType = "query", DataType = "List<string>", IsRequired = false)]
