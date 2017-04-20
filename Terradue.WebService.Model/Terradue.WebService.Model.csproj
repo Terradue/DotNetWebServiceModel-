@@ -114,17 +114,17 @@
     <Reference Include="Terradue.OpenSearch">
       <HintPath>..\packages\Terradue.OpenSearch.1.14.2\lib\net40\Terradue.OpenSearch.dll</HintPath>
     </Reference>
-    <Reference Include="Terradue.Portal.AdminTool">
-      <HintPath>..\packages\Terradue.Portal.2.7.8\lib\net45\Terradue.Portal.AdminTool.exe</HintPath>
-    </Reference>
-    <Reference Include="Terradue.Portal.Agent">
-      <HintPath>..\packages\Terradue.Portal.2.7.8\lib\net45\Terradue.Portal.Agent.exe</HintPath>
-    </Reference>
-    <Reference Include="Terradue.Portal">
-      <HintPath>..\packages\Terradue.Portal.2.7.8\lib\net45\Terradue.Portal.dll</HintPath>
-    </Reference>
     <Reference Include="MySql.Data">
       <HintPath>..\packages\MySql.Data.6.9.6\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Terradue.Portal.AdminTool">
+      <HintPath>..\packages\Terradue.Portal.2.7.12\lib\net45\Terradue.Portal.AdminTool.exe</HintPath>
+    </Reference>
+    <Reference Include="Terradue.Portal.Agent">
+      <HintPath>..\packages\Terradue.Portal.2.7.12\lib\net45\Terradue.Portal.Agent.exe</HintPath>
+    </Reference>
+    <Reference Include="Terradue.Portal">
+      <HintPath>..\packages\Terradue.Portal.2.7.12\lib\net45\Terradue.Portal.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -154,7 +154,9 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Terradue.WebService.Model.csproj" />
+    <None Include="app.config" />
     <None Include="core\db\db-create.sql" />
+    <None Include="core\db\db-2.7.9#.sql" />
     <None Include="core\db\db-2.7.8#.sql" />
     <None Include="core\db\db-2.7.4#.sql" />
     <None Include="core\db\db-2.7.3.2#.sql" />
@@ -180,6 +182,5 @@
     <None Include="core\db\db-2.5#.sql" />
     <None Include="core\db\db-2.4c.sql" />
     <None Include="core\db\db-2.4#.sql" />
-    <None Include="app.config" />
   </ItemGroup>
 </Project>
