@@ -65,6 +65,7 @@ namespace Terradue.WebService.Model {
             this.Available = entity.Available;
             this.IconUrl = entity.IconUrl;
             this.Tags = entity.GetTagsAsList();
+            this.Quotable = entity.Quotable;
         }
 
         /// <summary>
