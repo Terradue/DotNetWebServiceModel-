@@ -88,6 +88,7 @@ namespace Terradue.WebService.Model {
 
             entity.Identifier = this.Identifier;
             entity.Name = this.Name;
+            if (!string.IsNullOrEmpty(this.DomainId)) entity.DomainId = Int32.Parse(this.DomainId);
             entity.BaseUrl = this.Url;
             entity.Proxy = this.Proxy;
             entity.Contact = this.Contact;
