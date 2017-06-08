@@ -39,8 +39,8 @@ namespace Terradue.WebService.Model {
         public String Identifier { get; set; }
         [ApiMember(Name="Name", Description = "Entity Name", ParameterType = "query", DataType = "String", IsRequired = false)]
         public String Name { get; set; }
-        [ApiMember (Name = "DomainId", Description = "Entity domain id", ParameterType = "query", DataType = "int", IsRequired = false)]
-        public int DomainId { get; set; }
+        [ApiMember (Name = "DomainId", Description = "Entity domain id", ParameterType = "query", DataType = "String", IsRequired = false)]
+        public String DomainId { get; set; }
         [ApiMember(Name="Options", Description = "Entity Options", ParameterType = "query", DataType = "HttpOptions", IsRequired = false)]
         public HttpOptions Options { get; set; }
 
