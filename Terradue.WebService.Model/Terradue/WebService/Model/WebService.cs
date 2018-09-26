@@ -7,7 +7,10 @@ using ServiceStack.Common.Web;
 namespace Terradue.WebService.Model {
 
     [Route("/service/search", "GET", Summary = "GET a list of services", Notes = "")]
-    public class SearchServices : IReturn<HttpResult>{}
+    public class SearchServices : IReturn<HttpResult>{
+        [ApiMember(Name="cloud", Description = "Service id", ParameterType = "query", DataType = "bool", IsRequired = false)]
+        public bool Cloud { get; set; }
+    }
 
     [Route("/service/wps/search", "GET", Summary = "GET a list of WPS services", Notes = "")]
     public class SearchWPSServices : IReturn<HttpResult>{}
