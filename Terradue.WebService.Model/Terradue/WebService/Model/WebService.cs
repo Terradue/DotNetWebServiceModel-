@@ -7,10 +7,7 @@ using ServiceStack.Common.Web;
 namespace Terradue.WebService.Model {
 
     [Route("/service/search", "GET", Summary = "GET a list of services", Notes = "")]
-    public class SearchServices : IReturn<HttpResult>{
-        [ApiMember(Name="cloud", Description = "Service id", ParameterType = "query", DataType = "bool", IsRequired = false)]
-        public bool Cloud { get; set; }
-    }
+    public class SearchServices : IReturn<HttpResult>{}
 
     [Route("/service/wps/search", "GET", Summary = "GET a list of WPS services", Notes = "")]
     public class SearchWPSServices : IReturn<HttpResult>{}
@@ -19,7 +16,10 @@ namespace Terradue.WebService.Model {
     public class GetWPSProcessDescription : IReturn<HttpResult>{}
 
     [Route("/service/wps", "GET", Summary = "GET a list of WPS services", Notes = "")]
-    public class GetWPSServices : IReturn<List<WebWpsService>>{}
+    public class GetWPSServices : IReturn<List<WebWpsService>>{
+        [ApiMember(Name="cloud", Description = "Service from cloud are returned", ParameterType = "query", DataType = "bool", IsRequired = false)]
+        public bool Cloud { get; set; }
+    }
 
     [Route("/service/wps/{Id}", "GET", Summary = "GET a WPS service", Notes = "")]
     public class GetWPSService : IReturn<WebWpsService>{
