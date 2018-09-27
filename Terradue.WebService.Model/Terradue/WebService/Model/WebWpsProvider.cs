@@ -64,6 +64,8 @@ namespace Terradue.WebService.Model {
         public String Contact { get; set; }
         [ApiMember(Name = "AutoSync", Description = "Is service auto synchronized", ParameterType = "query", DataType = "bool", IsRequired = true)]
         public bool AutoSync { get; set; }
+        [ApiMember(Name = "StageResults", Description = "Is service staging results", ParameterType = "query", DataType = "bool", IsRequired = true)]
+        public bool StageResults { get; set; }
 
         public WebWpsProvider() {}
 
@@ -76,6 +78,7 @@ namespace Terradue.WebService.Model {
             this.Proxy = entity.Proxy;
             this.Contact = entity.Contact;
             this.AutoSync = entity.AutoSync;
+            this.StageResults = entity.StageResults;
         }
 
         /// <summary>
@@ -93,6 +96,7 @@ namespace Terradue.WebService.Model {
             entity.Proxy = this.Proxy;
             entity.Contact = this.Contact;
             entity.AutoSync = this.AutoSync;
+            entity.StageResults = this.StageResults;
 
             return entity;
         }
