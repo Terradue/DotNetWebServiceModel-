@@ -11,7 +11,7 @@ pipeline {
       steps {
         sh 'rm -rf packges */bin build'
         sh 'mkdir -p build'
-        sh 'nuget restore'
+        sh 'nuget restore -MSBuildVersion 14'
         sh 'ls -la'
       }
     }
@@ -23,7 +23,7 @@ pipeline {
     }
     stage('Package') {
       steps {
-          sh "nuget4mono -g origin/${env.BRANCH_NAME} -p Terradue.WebService.Model/packages.config Terradue.WebService.Model/bin/Terradue.WebService.Model.dll"
+          sh "nuget4mono -g origin/${env.BRANCH_NAME} -p ${workspace}/Terradue.WebService.Model/packages.config ${workspace}/Terradue.WebService.Model/bin/Terradue.WebService.Model.dll"
           sh 'cat *.nuspec'
           sh 'nuget pack -OutputDirectory build'
           sh "echo ${params.NUGET_PUBLISH}"           
