@@ -87,10 +87,10 @@ namespace Terradue.WebService.Model {
             entity.Version = this.Version;
             entity.Available = this.Available;
             entity.IconUrl = this.IconUrl;
-            if (this.Tags != null) {
+            if (this.Tags != null && this.Tags.Count > 0) {
                 entity.Tags = "";
                 foreach (var tag in this.Tags) entity.AddTag(tag);
-            }
+            } else entity.Tags = null;
 
             return entity;
         }
