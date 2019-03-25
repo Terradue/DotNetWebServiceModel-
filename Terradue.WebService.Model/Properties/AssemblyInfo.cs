@@ -4,7 +4,7 @@
 @{
     Terradue.WebService.Model Software Package provides with all the web services interfaces and their REST model.
 
-    \xrefitem sw_version "Versions" "Software Package Version" 1.1.26
+    \xrefitem sw_version "Versions" "Software Package Version" 1.1.27
 
     \xrefitem sw_link "Links" "Software Package List" [Terradue.WebService.Model](https://git.terradue.com/sugar/terradue-webservice-model)
 
@@ -32,5 +32,5 @@ using NuGet4Mono.Extensions;
 [assembly: AssemblyLicenseUrl("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-[assembly: AssemblyVersion("1.1.26")]
-[assembly: AssemblyInformationalVersion("1.1.26")]
+[assembly: AssemblyVersion("1.1.27")]
+[assembly: AssemblyInformationalVersion("1.1.27")]
