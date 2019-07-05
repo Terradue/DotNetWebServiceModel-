@@ -9,6 +9,12 @@ namespace Terradue.WebService.Model {
     [Route("/cr/wps", "GET", Summary = "GET a list of WPS providers", Notes = "")]
     public class GetWPSProviders : IReturn<List<WebWpsProvider>>{}
 
+    [Route("/cr/wps/{Id}", "GET", Summary = "POST a WPS provider", Notes = "")]
+    public class GetWPSProvider : IReturn<WebWpsProvider> {
+        [ApiMember(Name = "Id", Description = "Provider id", ParameterType = "query", DataType = "int", IsRequired = true)]
+        public int Id { get; set; }
+    }
+
     [Route("/cr/wps/search", "GET", Summary = "GET a list of WPS providers", Notes = "")]
     public class SearchWPSProviders : IReturn<HttpResult>{}
 
@@ -17,7 +23,7 @@ namespace Terradue.WebService.Model {
         [ApiMember(Name="Identifier", Description = "Identifier", ParameterType = "query", DataType = "string", IsRequired = true)]
         public string Identifier { get; set; }
     }
-
+    
     [Route("/cr/wps", "POST", Summary = "POST a WPS provider", Notes = "")]
     public class CreateWPSProvider : WebWpsProvider, IReturn<WebWpsProvider>{}
 

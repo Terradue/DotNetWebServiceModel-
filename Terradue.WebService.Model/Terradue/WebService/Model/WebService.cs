@@ -21,22 +21,22 @@ namespace Terradue.WebService.Model {
         public bool Cloud { get; set; }
     }
 
-    [Route("/service/wps/{Id}", "GET", Summary = "GET a WPS service", Notes = "")]
+    [Route("/service/wps/{Identifier}", "GET", Summary = "GET a WPS service", Notes = "")]
     public class GetWPSService : IReturn<WebWpsService>{
-        [ApiMember(Name="Id", Description = "Service id", ParameterType = "query", DataType = "int", IsRequired = true)]
-        public int Id { get; set; }
+        [ApiMember(Name = "Identifier", Description = "Service id", ParameterType = "query", DataType = "int", IsRequired = true)]
+        public string Identifier { get; set; }
     }
-
+    
     [Route("/service/wps", "POST", Summary = "POST a WPS service", Notes = "")]
     public class CreateWPSService : WebWpsService, IReturn<WebWpsService>{}
 
     [Route("/service/wps", "PUT", Summary = "PUT a WPS service", Notes = "")]
     public class UpdateWPSService : WebWpsService, IReturn<WebWpsService>{}
 
-    [Route("/service/wps/{Id}", "DELETE", Summary = "Delete a WPS service", Notes = "")]
+    [Route("/service/wps/{Identifier}", "DELETE", Summary = "Delete a WPS service", Notes = "")]
     public class DeleteWPSService : IReturn<bool>{
-        [ApiMember(Name="Id", Description = "Service id", ParameterType = "query", DataType = "int", IsRequired = true)]
-        public int Id { get; set; }
+        [ApiMember(Name = "Identifier", Description = "Service id", ParameterType = "query", DataType = "int", IsRequired = true)]
+        public string Identifier { get; set; }
     }
 
     public class WebService : WebEntity {
@@ -79,6 +79,7 @@ namespace Terradue.WebService.Model {
         public Service ToEntity(IfyContext context, Service input){
             Service entity = input;
 
+            if (this.Id == 0 && string.IsNullOrEmpty(this.Identifier)) this.Identifier = Guid.NewGuid().ToString();
             entity.Identifier = this.Identifier;
             entity.Name = this.Name;
             entity.Description = this.Description;
@@ -99,6 +100,9 @@ namespace Terradue.WebService.Model {
 
     public class WebWpsService : WebService {
 
+        [ApiMember(Name = "RemoteIdentifier", Description = "Service RemoteIdentifier", ParameterType = "query", DataType = "string", IsRequired = false)]
+        public string RemoteIdentifier { get; set; }
+
         public WebWpsService() {}
 
         /// <summary>
@@ -106,6 +110,7 @@ namespace Terradue.WebService.Model {
         /// </summary>
         /// <param name="entity">Entity.</param>
         public WebWpsService(WpsProcessOffering entity) : base(entity) {
+            this.RemoteIdentifier = entity.RemoteIdentifier;
         }
 
         /// <summary>
@@ -114,17 +119,9 @@ namespace Terradue.WebService.Model {
         /// <returns>The entity.</returns>
         /// <param name="context">Context.</param>
         public WpsProcessOffering ToEntity(IfyContext context, WpsProcessOffering input){
-            WpsProcessOffering entity = (input == null ? new WpsProcessOffering(context) : input);
+            WpsProcessOffering entity = (Terradue.Portal.WpsProcessOffering)base.ToEntity(context, input);
+            entity.RemoteIdentifier = this.RemoteIdentifier;
 
-            if (this.Id == 0) this.Identifier = Guid.NewGuid().ToString();
-            entity.Identifier = this.Identifier;
-            entity.Name = this.Name;
-            entity.Description = this.Description;
-            if (!string.IsNullOrEmpty(this.DomainId)) entity.DomainId = Int32.Parse(this.DomainId);
-            entity.Url = this.Url;
-            entity.Version = this.Version;
-            entity.IconUrl = this.IconUrl;
-            
             return entity;
         }
 
