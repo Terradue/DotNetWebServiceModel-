@@ -26,7 +26,7 @@ namespace Terradue.WebService.Model {
         [ApiMember(Name = "Identifier", Description = "Service id", ParameterType = "query", DataType = "int", IsRequired = true)]
         public string Identifier { get; set; }
     }
-    
+
     [Route("/service/wps", "POST", Summary = "POST a WPS service", Notes = "")]
     public class CreateWPSService : WebWpsService, IReturn<WebWpsService>{}
 
@@ -52,6 +52,8 @@ namespace Terradue.WebService.Model {
         public bool Quotable { get; set; }
         [ApiMember(Name="IconUrl", Description = "Service icon url", ParameterType = "query", DataType = "string", IsRequired = false)]
         public string IconUrl { get; set; }
+        [ApiMember(Name = "ValidationUrl", Description = "Service validation url", ParameterType = "query", DataType = "string", IsRequired = false)]
+        public string ValidationUrl { get; set; }
         [ApiMember(Name = "Tags", Description = "Service Tags", ParameterType = "query", DataType = "List<string>", IsRequired = false)]
         public List<string> Tags { get; set; }
 
@@ -67,6 +69,7 @@ namespace Terradue.WebService.Model {
             this.Version = entity.Version;
             this.Available = entity.Available;
             this.IconUrl = entity.IconUrl;
+            this.ValidationUrl = entity.ValidationUrl;
             this.Tags = entity.GetTagsAsList();
             this.Quotable = entity.Quotable;
         }
@@ -88,6 +91,7 @@ namespace Terradue.WebService.Model {
             entity.Version = this.Version;
             entity.Available = this.Available;
             entity.IconUrl = this.IconUrl;
+            entity.ValidationUrl = this.ValidationUrl;
             if (this.Tags != null && this.Tags.Count > 0) {
                 entity.Tags = "";
                 foreach (var tag in this.Tags) entity.AddTag(tag);
